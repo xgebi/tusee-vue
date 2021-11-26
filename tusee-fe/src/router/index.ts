@@ -1,27 +1,38 @@
-import { createRouter, createWebHistory, RouteRecordRaw } from 'vue-router'
-import Home from "../views/Home.vue";
-import Login from '@/views/user/Login';
+import { createRouter, createWebHistory, RouteRecordRaw } from 'vue-router';
+import Home from '@/views/Home.vue';
+import Login from '@/views/user/Login.vue';
+import Registration from '@/views/user/Registration.vue';
+import Profile from '@/views/user/Profile.vue';
 
 const routes: Array<RouteRecordRaw> = [
   {
-    path: "/",
-    name: "Home",
-    component: Home
+    path: '/',
+    name: 'Home',
+    component: Home,
   },
   {
-    path: "/login",
-    name: "Login",
-    component: Login
+    path: '/login',
+    name: 'Login',
+    component: Login,
   },
-]
+  {
+    path: '/registration',
+    name: 'Registration',
+    component: Registration,
+  },
+  {
+    path: '/profile',
+    name: 'Profile',
+    component: Profile,
+  },
+];
 
 const router = createRouter({
   history: createWebHistory(process.env.BASE_URL),
-  routes
-})
+  routes,
+});
 
-export default router
-
+export default router;
 
 // {
 //   path: '/login',
