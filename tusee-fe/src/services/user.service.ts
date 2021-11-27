@@ -1,8 +1,9 @@
 import IUser from '@/interfaces/IUser';
+import UserRepository from '@/repositories/user.repository';
 
 class UserService {
   public static async isRegistrationEnabled(): Promise<boolean> {
-    return true;
+    return UserRepository.isRegistrationEnabled();
   }
 
   public static async register(): Promise<IUser> {
