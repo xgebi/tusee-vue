@@ -15,20 +15,17 @@
   </main>
 </template>
 
-<script lang="ts">
+<script lang="tsx">
 import UserService from '@/services/user.service';
-
-type FormData = {
-  email: string;
-  password: string;
-};
+import IUserFormData from '@/interfaces/IUserFormData';
+import { defineComponent } from 'vue';
 
 type RegistrationPageState = {
   isRegistrationEnabled: boolean;
-  formData: FormData;
+  formData: IUserFormData;
 };
 
-export default {
+export default defineComponent({
   name: 'Registration',
   data(): RegistrationPageState {
     return {
@@ -36,7 +33,7 @@ export default {
       formData: {
         email: '',
         password: '',
-      } as FormData,
+      } as IUserFormData,
     };
   },
   async created(): Promise<void> {
@@ -44,8 +41,8 @@ export default {
   },
   methods: {
     async register(): Promise<void> {
-      console.log(this.formData);
+      await UserService.register(this.formData);
     },
   },
-};
+});
 </script>
