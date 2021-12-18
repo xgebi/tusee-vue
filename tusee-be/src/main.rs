@@ -8,11 +8,6 @@ use lettre::transport::smtp::authentication::Credentials;
 use lettre::{Message, SmtpTransport, Transport};
 use user::user::is_registration_enabled;
 
-#[get("/")]
-async fn hello() -> impl Responder {
-    HttpResponse::Ok().body("Hello world!")
-}
-
 #[post("/echo")]
 async fn echo(req_body: String) -> impl Responder {
     HttpResponse::Ok().body(req_body)
@@ -55,7 +50,6 @@ async fn main() -> std::io::Result<()> {
                     Ok(val) => val.find("localhost").is_some()
                 }
             }))
-            .service(hello)
             .service(echo)
             .service(send_email)
             .service(is_registration_enabled)

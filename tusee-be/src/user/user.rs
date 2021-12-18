@@ -31,8 +31,9 @@ pub(crate) async fn is_registration_enabled() -> HttpResponse {
 }
 
 #[post("/api/login")]
-pub(crate) async fn log_user_in() -> HttpResponse {
+pub(crate) async fn log_user_in(req_body: String) -> HttpResponse {
     let conn = create_database_connection();
+    // conn.query_one("SELECT password FROM ")
 
     let res = HttpResponse::Ok()
         .json(IsRegistrationEnabled {
