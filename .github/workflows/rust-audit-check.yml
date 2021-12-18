@@ -4,12 +4,12 @@ on:
     paths: 
       - '**/Cargo.toml'
       - '**/Cargo.lock'
+defaults:
+  run:
+    working-directory: tusee-be
 jobs:
   security_audit:
     runs-on: ubuntu-latest
-    defaults:
-      run:
-        working-directory: tusee-be
     steps:
       - uses: actions/checkout@v1
       - uses: actions-rs/audit-check@v1
