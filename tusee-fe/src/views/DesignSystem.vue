@@ -1,11 +1,15 @@
 <template>
-  <div></div>
+  <main></main>
 </template>
 
-<script lang="ts">
+<script>
 import {defineComponent} from 'vue';
 
 export default defineComponent({
-  name: 'Login',
+  name: 'DesignSystem',
 });
 </script>
+
+<style scoped>
+
+</style>

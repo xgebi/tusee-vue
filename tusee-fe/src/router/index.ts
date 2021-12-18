@@ -3,6 +3,7 @@ import Home from '@/views/Home.vue';
 import Login from '@/views/user/Login.vue';
 import Registration from '@/views/user/Registration.vue';
 import Profile from '@/views/user/Profile.vue';
+import DesignSystem from '@/views/DesignSystem.vue';
 
 const routes: Array<RouteRecordRaw> = [
   {
@@ -24,6 +25,14 @@ const routes: Array<RouteRecordRaw> = [
     path: '/profile',
     name: 'Profile',
     component: Profile,
+  },
+  {
+    path: '/design-system',
+    name: 'Design System',
+    component: DesignSystem,
+    beforeEnter: () => {
+      return process.env.NODE_ENV === 'development';
+    },
   },
 ];
 
