@@ -6,7 +6,7 @@ use actix_web::{get, post, web, http, App, HttpResponse, HttpServer, Responder};
 use actix_cors::Cors;
 use lettre::transport::smtp::authentication::Credentials;
 use lettre::{Message, SmtpTransport, Transport};
-use user::user::is_registration_enabled;
+use crate::user::user::{log_user_in, register_user, is_registration_enabled};
 
 #[post("/echo")]
 async fn echo(req_body: String) -> impl Responder {
@@ -53,6 +53,8 @@ async fn main() -> std::io::Result<()> {
             .service(echo)
             .service(send_email)
             .service(is_registration_enabled)
+            .service(log_user_in)
+            .service(register_user)
             .route("/hey", web::get().to(manual_hello))
     })
         .bind("127.0.0.1:8081")?

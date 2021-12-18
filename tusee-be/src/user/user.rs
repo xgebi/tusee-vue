@@ -94,3 +94,10 @@ pub(crate) async fn log_user_in(req_body: String) -> HttpResponse {
         .json(login_result);
     res
 }
+
+#[post("/api/register")]
+pub(crate) async fn register_user(req_body: String) -> HttpResponse {
+    let res = HttpResponse::Ok()
+        .json(login_result);
+    res
+}
