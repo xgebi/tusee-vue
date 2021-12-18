@@ -13,3 +13,5 @@ lettre = "0.10.0-rc.4"
 postgres = "0.19.1"
 postgres-types = { version = "0.2.1", features = ["derive"] }
 actix-cors = "0.5.4"
+envy = "0.4.2"
+bcrypt = "0.10.1"

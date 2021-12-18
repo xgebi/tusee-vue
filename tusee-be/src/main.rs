@@ -1,5 +1,6 @@
 mod user;
 mod services;
+mod utilities;
 
 use actix_web::{get, post, web, http, App, HttpResponse, HttpServer, Responder};
 use actix_cors::Cors;

@@ -6,6 +6,10 @@
         <input type="email" required id="email" v-model="formData.email" />
       </section>
       <section>
+        <label for="password">Password:</label>
+        <input type="password" required id="password" v-model="formData.password" />
+      </section>
+      <section>
         <button @click="register">Register</button>
       </section>
     </div>
@@ -15,7 +19,7 @@
   </main>
 </template>
 
-<script lang="tsx">
+<script lang="ts">
 import UserService from '@/services/user.service';
 import IUserFormData from '@/interfaces/IUserFormData';
 import { defineComponent } from 'vue';
