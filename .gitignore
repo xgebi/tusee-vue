@@ -1,5 +1,4 @@
 /.idea
-/tusee-be/target
 
 # Created by .ignore support plugin (hsz.mobi)
 ### Node template
@@ -38,8 +37,8 @@ bower_components
 build/Release
 
 # Dependency directories
-/tusee-fe/node_modules/
-/tusee-fe/jspm_packages/
+/node_modules/
+/jspm_packages/
 
 # TypeScript v1 declaration files
 typings/
