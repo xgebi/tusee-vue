@@ -2,11 +2,11 @@
   <main class="registration-page">
     <div v-if="isRegistrationEnabled" class="modal">
       <section>
-        <label for="email">Email:</label>
+        <label for="email">{{ $t('shared.email') }}:</label>
         <input type="email" required id="email" v-model="formData.email" />
       </section>
       <section>
-        <label for="password">Password:</label>
+        <label for="password">{{ $t('shared.password') }}:</label>
         <input
           type="password"
           required
@@ -15,11 +15,11 @@
         />
       </section>
       <section>
-        <button @click="register">Register</button>
+        <button @click="register">{{ $t('registration.register') }}</button>
       </section>
     </div>
     <div v-if="!isRegistrationEnabled" class="modal">
-      Registration is disabled
+      {{ $t('registration.registrationDisabled') }}
     </div>
   </main>
 </template>

@@ -1,5 +1,6 @@
 import IUserFormData from '@/interfaces/IUserFormData';
 import IUser from '@/interfaces/IUser';
+import IUserCreateResult from '@/interfaces/IUserCreateResult';
 // import axios from 'axios';
 // import IIsEnabled from '@/interfaces/IRegistrationEnabled';
 
@@ -17,7 +18,20 @@ class UserRepository {
     return true;
   }
 
-  public static async register(data: IUserFormData): Promise<IUser> {
+  public static async register(
+    data: IUserFormData,
+  ): Promise<IUserCreateResult> {
+    return {
+      status: '',
+    };
+  }
+
+  /**
+   * Logs user in
+   *
+   * @param data {IUserFormData}
+   */
+  public static async login(data: IUserFormData): Promise<IUser> {
     return {
       name: '',
     };

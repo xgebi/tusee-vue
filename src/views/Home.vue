@@ -2,9 +2,15 @@
   <div class="home">
     <nav>
       <ul>
-        <li v-if="isLoggedIn">{{ $t('home.goToBoards') }}</li>
-        <li v-else>{{ $t('home.login') }}</li>
-        <li v-if="!isLoggedIn">{{ $t('home.register') }}</li>
+        <li v-if="isLoggedIn">
+          <a href="/dashboards">{{ $t('home.goToDashboard') }}</a>
+        </li>
+        <li v-else>
+          <a href="/login">{{ $t('home.login') }}</a>
+        </li>
+        <li v-if="!isLoggedIn">
+          <a href="/register">{{ $t('home.register') }}</a>
+        </li>
       </ul>
     </nav>
   </div>

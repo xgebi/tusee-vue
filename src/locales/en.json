@@ -1,5 +1,10 @@
 {
   "home.login": "Log in",
   "home.register": "Register",
-  "home.goToBoards": "Go to boards"
+  "home.goToDashboard": "Go to dashboard",
+  "login.login": "Log in",
+  "registration.register": "Register",
+  "registration.registrationDisabled": "Registration is disabled",
+  "shared.email": "Email",
+  "shared.password": "Password"
 }
