@@ -7,7 +7,12 @@
       </section>
       <section>
         <label for="password">Password:</label>
-        <input type="password" required id="password" v-model="formData.password" />
+        <input
+          type="password"
+          required
+          id="password"
+          v-model="formData.password"
+        />
       </section>
       <section>
         <button @click="register">Register</button>

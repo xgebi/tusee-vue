@@ -1,18 +1,26 @@
 <template>
   <div class="home">
-    <img alt="Vue logo" src="../assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js + TypeScript App"/>
+    <nav>
+      <ul>
+        <li v-if="isLoggedIn">Go to dashboards</li>
+        <li v-else>Login</li>
+        <li v-if="!isLoggedIn">Sign up</li>
+      </ul>
+    </nav>
   </div>
 </template>
 
 <script lang="ts">
 import { defineComponent } from 'vue';
-import HelloWorld from '@/components/HelloWorld.vue'; // @ is an alias to /src
+import { mapGetters, mapActions } from 'vuex';
 
 export default defineComponent({
   name: 'Home',
-  components: {
-    HelloWorld,
+  components: {},
+  computed: {
+    ...mapGetters({
+      isLoggedIn: 'isLoggedIn',
+    }),
   },
 });
 </script>
